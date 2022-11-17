@@ -113,8 +113,12 @@ header{
                     }
                 }
             }
+            .search-btn{
+                transform: rotateY(180deg);
+            }
             .hamburgher{
                 margin-left: 1rem;
+
                 i{
                     margin-left: .1rem;
                 }
