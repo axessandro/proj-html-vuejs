@@ -19,6 +19,7 @@ export default{
                 }
             ],
             currentPage: 0,
+            autoplay:null,
         }
     },
     methods:{
@@ -38,13 +39,25 @@ export default{
             }else {
                 this.currentPage = this.pages.length -1;
             }
+        },
+        startAutoplay(){
+            if (this.autoplay === null){
+                this.autoplay = setInterval(()=>{this.showNext()}, 4000);
+            }
+        },
+        stopAutoplay(){
+            clearInterval(this.autoplay);
+            this.autoplay = null;
         }
+    },
+    created(){
+        this.startAutoplay();
     }
 }
 </script>
 
 <template>
-<div class="jumbo">
+<div class="jumbo" @mouseover="stopAutoplay" @mouseleave="startAutoplay">
     <img :src="getImg(`../assets/img/${this.pages[currentPage].imgURL}`)" :alt="pages[currentPage].title">
     <div class="jumbo-inner">
         <div class="prev-btn" @click="showPrev">&larr;</div>
@@ -136,15 +149,18 @@ export default{
                 }
                 &.orange-btn{
                     background-color: $primary-color;
-                    
                     a{
                         color: white;
                         span{
                             border-right: 1px solid white;
-                        }
-                        
+                        }  
                     }
-                    
+                    &:hover span{
+                        border-right: 1px solid $primary-color;
+                    }
+                }
+                &:hover span{
+                    border-right: 1px solid white;
                 }
             }
 
