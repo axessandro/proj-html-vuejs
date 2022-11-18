@@ -5,6 +5,7 @@
 // VARIABLES
 $dark-color: #1E1E1E;
 $primary-color: #EB562E;
+$gray-bg: #FAFAFA;
 // VARIABLES
 
 // common
@@ -15,3 +16,20 @@ img{
     max-width: 100%;
 }
 // common
+
+// typography
+h1,h2{
+    font-weight: 600;
+    span{
+        color: $primary-color;
+    }
+}
+h4{
+    font-size: 1rem;
+}
+p{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 200;
+    opacity: .4;
+}
+// typography

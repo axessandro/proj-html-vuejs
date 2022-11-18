@@ -1,12 +1,13 @@
 <script>
-import {store} from "./store";
 import AppHeader from './components/AppHeader.vue'
 import AppJumbo from "./components/AppJumbo.vue";
+import AppSpecialties from './components/AppSpecialties.vue';
 
 export default{
     components:{
         AppHeader,
-        AppJumbo
+        AppJumbo,
+        AppSpecialties
     }
 }
 </script>
@@ -14,6 +15,7 @@ export default{
 <template>
   <AppHeader/>
   <AppJumbo/>
+  <AppSpecialties/>
 </template>
 
 <style lang="scss">

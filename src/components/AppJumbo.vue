@@ -7,13 +7,13 @@ export default{
             pages: [
                 {
                     title: "Our Team",
-                    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing alit sed eiusmod tempor incidunt ut labore et dolore magna aliqua",
+                    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed eiusmod tempor incidunt ut labore et dolore magna aliqua",
                     href: "/about-us",
                     imgURL: "jumbo-0.jpg"
                 },
                 {
                     title: "Our Works",
-                    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing alit sed eiusmod tempor incidunt ut labore et dolore magna aliqua",
+                    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed eiusmod tempor incidunt ut labore et dolore magna aliqua",
                     href: "/our-works",
                     imgURL: "jumbo-1.png"
                 }
@@ -57,7 +57,7 @@ export default{
 </script>
 
 <template>
-<div class="jumbo" @mouseover="stopAutoplay" @mouseleave="startAutoplay">
+<section class="jumbo" @mouseover="stopAutoplay" @mouseleave="startAutoplay">
     <img :src="getImg(`../assets/img/${this.pages[currentPage].imgURL}`)" :alt="pages[currentPage].title">
     <div class="jumbo-inner">
         <div class="prev-btn" @click="showPrev">&larr;</div>
@@ -69,7 +69,7 @@ export default{
         </div>
         <div class="next-btn" @click="showNext">&rarr;</div>
     </div>
-</div>
+</section>
 </template>
 
 <style lang="scss" scoped>
@@ -109,18 +109,10 @@ export default{
             flex-grow: 1;
             padding: 5.5rem;
             h1{
-                font-weight: 600;
                 font-size: 3.8rem;
-                padding-bottom: .5rem;
-                span{
-                    color: $primary-color;
-                }
             }
             p{
-                font-family: 'PT Sans', sans-serif;
-                font-weight: 200;
                 width: 450px;
-                opacity: .3;
             }
             button{
                 border: 0;
