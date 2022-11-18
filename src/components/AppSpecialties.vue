@@ -61,7 +61,7 @@ export default{
 section{
     width: 100%;
     position: relative;
-    height: 60vh;
+    height: 500px;
     background-color: $gray-bg;
     .specialties{
         width: 90%;
