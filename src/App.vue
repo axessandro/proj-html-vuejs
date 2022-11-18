@@ -3,13 +3,15 @@ import AppHeader from './components/AppHeader.vue'
 import AppJumbo from "./components/AppJumbo.vue";
 import AppSpecialties from './components/AppSpecialties.vue';
 import AppMembers from './components/AppMembers.vue';
+import AppEvents from './components/AppEvents.vue';
 
 export default{
     components:{
         AppHeader,
         AppJumbo,
         AppSpecialties,
-        AppMembers
+        AppMembers,
+        AppEvents
     }
 }
 </script>
@@ -19,6 +21,7 @@ export default{
   <AppJumbo/>
   <AppSpecialties/>
   <AppMembers/>
+  <AppEvents/>
 </template>
 
 <style lang="scss">

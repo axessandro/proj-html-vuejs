@@ -93,15 +93,15 @@ section{
     background-color: $gray-bg;
     padding-bottom: 4rem;
     .ms_container{
-        width: 90%;
-        margin: 0 auto;
+        width: 100%;
+        padding-right: 5%;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         position: relative;
         .member-img{
             width: 40%;
-            margin-left: 180px;
+            margin-left: 12.5%;
             padding-top: 3rem;
             position: relative;
             .btns{
