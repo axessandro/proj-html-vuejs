@@ -2,12 +2,14 @@
 import AppHeader from './components/AppHeader.vue'
 import AppJumbo from "./components/AppJumbo.vue";
 import AppSpecialties from './components/AppSpecialties.vue';
+import AppMembers from './components/AppMembers.vue';
 
 export default{
     components:{
         AppHeader,
         AppJumbo,
-        AppSpecialties
+        AppSpecialties,
+        AppMembers
     }
 }
 </script>
@@ -16,6 +18,7 @@ export default{
   <AppHeader/>
   <AppJumbo/>
   <AppSpecialties/>
+  <AppMembers/>
 </template>
 
 <style lang="scss">

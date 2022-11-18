@@ -61,20 +61,17 @@ export default{
 section{
     width: 100%;
     position: relative;
-    height: 65vh;
+    height: 60vh;
     background-color: $gray-bg;
     .specialties{
         width: 90%;
         position: absolute;
-        top: -30px;
+        top: -50px;
         left: 5%;
         background-color: white;
         padding: 5rem 0;
         text-align: center;
         hr{
-            width: 50px;
-            opacity: 1;
-            border: 1px solid $primary-color;
             margin: 0 auto 2rem;
         }
         .row{

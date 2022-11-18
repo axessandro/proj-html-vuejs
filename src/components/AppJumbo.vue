@@ -42,7 +42,7 @@ export default{
         },
         startAutoplay(){
             if (this.autoplay === null){
-                this.autoplay = setInterval(()=>{this.showNext()}, 4000);
+                this.autoplay = setInterval(()=>{this.showNext()}, 5000);
             }
         },
         stopAutoplay(){
@@ -57,17 +57,17 @@ export default{
 </script>
 
 <template>
-<section class="jumbo" @mouseover="stopAutoplay" @mouseleave="startAutoplay">
+<section class="jumbo">
     <img :src="getImg(`../assets/img/${this.pages[currentPage].imgURL}`)" :alt="pages[currentPage].title">
     <div class="jumbo-inner">
-        <div class="prev-btn" @click="showPrev">&larr;</div>
+        <div class="prev-btn" @mouseover="stopAutoplay" @mouseleave="startAutoplay" @click="showPrev">&larr;</div>
         <div class="text-wrapper">
             <h1>{{pages[currentPage].title}}<span>.</span></h1>
             <p>{{pages[currentPage].subtitle}}</p>
             <button><a :href="pages[currentPage].href"><span>READ MORE</span> &rarr;</a></button>
             <button class="orange-btn"><a :href="pages[currentPage].href"><span>PURCHASE</span> &rarr;</a></button>
         </div>
-        <div class="next-btn" @click="showNext">&rarr;</div>
+        <div class="next-btn" @mouseover="stopAutoplay" @mouseleave="startAutoplay" @click="showNext">&rarr;</div>
     </div>
 </section>
 </template>
