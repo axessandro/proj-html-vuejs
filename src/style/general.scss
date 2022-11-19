@@ -5,7 +5,7 @@
 // VARIABLES
 $dark-color: #1E1E1E;
 $primary-color: #EB562E;
-$gray-bg: #FAFAFA;
+$gray-bg: #fafafa;
 // VARIABLES
 
 // common
@@ -37,5 +37,14 @@ p{
     font-family: 'PT Sans', sans-serif;
     font-weight: 200;
     opacity: .4;
+}
+.read-more{
+    color: black;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    &:hover{
+        color: $primary-color;
+    }
 }
 // typography

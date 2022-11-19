@@ -4,6 +4,7 @@ import AppJumbo from "./components/AppJumbo.vue";
 import AppSpecialties from './components/AppSpecialties.vue';
 import AppMembers from './components/AppMembers.vue';
 import AppEvents from './components/AppEvents.vue';
+import AppRole from './components/AppRole.vue';
 
 export default{
     components:{
@@ -11,7 +12,8 @@ export default{
         AppJumbo,
         AppSpecialties,
         AppMembers,
-        AppEvents
+        AppEvents,
+        AppRole
     }
 }
 </script>
@@ -22,6 +24,7 @@ export default{
   <AppSpecialties/>
   <AppMembers/>
   <AppEvents/>
+  <AppRole/>
 </template>
 
 <style lang="scss">

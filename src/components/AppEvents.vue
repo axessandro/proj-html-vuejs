@@ -130,6 +130,9 @@ section{
             padding: $p-left;
             border-bottom: 1px solid lightgray;
             background-color: #FAFAFA;
+            &:hover .name-event{
+                color: $primary-color;
+            }
             &.clicked{
                 background-color: rgb(255, 255, 255);
             }
@@ -177,12 +180,7 @@ section{
                     padding-bottom: 5px;
                 }
             }
-            .read-more{
-                color: black;
-                font-family: 'PT Sans', sans-serif;
-                font-weight: 900;
-                text-decoration: none;
-            }
+            
         }
     }
 
