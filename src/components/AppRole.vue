@@ -43,7 +43,7 @@ export default{
 @use "../style/general.scss" as *;
 section{
     padding-top: 4.5rem;
-    background-color: $gray-bg;
+    padding-bottom: 8rem;
     .ms-container{
         width: 75%;
         margin: 0 auto;
