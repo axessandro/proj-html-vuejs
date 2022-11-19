@@ -24,11 +24,14 @@ hr{
 // common
 
 // typography
-h1,h2{
+h1,h2,h3{
     font-weight: 600;
     span{
         color: $primary-color;
     }
+}
+h3{
+    font-size: 1.5rem;
 }
 h4{
     font-size: 1rem;

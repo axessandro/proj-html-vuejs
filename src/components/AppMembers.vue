@@ -62,7 +62,7 @@ export default{
             </div>
 
             <div class="member-card">
-                <h2>{{members[currentMember].name}}</h2>
+                <h3>{{members[currentMember].name}}</h3>
                 <p class="role">{{members[currentMember].role}}</p>
                 <hr>
                 <p>{{store.roles.founderDirector.roleShortText}}...</p>
@@ -135,7 +135,9 @@ section{
                 bottom: 40px;
                 left: 85%;
                 z-index: 999;
-                
+                .role{
+                    font-size: .6rem;
+                }
                 p{
                     font-size: .8rem;
                 }

@@ -5,6 +5,7 @@ import AppSpecialties from './components/AppSpecialties.vue';
 import AppMembers from './components/AppMembers.vue';
 import AppEvents from './components/AppEvents.vue';
 import AppRole from './components/AppRole.vue';
+import AppNews from './components/AppNews.vue';
 
 export default{
     components:{
@@ -13,7 +14,8 @@ export default{
         AppSpecialties,
         AppMembers,
         AppEvents,
-        AppRole
+        AppRole,
+        AppNews
     }
 }
 </script>
@@ -25,6 +27,7 @@ export default{
   <AppMembers/>
   <AppEvents/>
   <AppRole/>
+  <AppNews/>
 </template>
 
 <style lang="scss">

@@ -17,7 +17,7 @@ export default{
     <div class="ms-container">
         <!-- left-side -->
         <div class="left-side">
-            <h2>{{store.roles.creativeLeader.roleName}}<span>.</span></h2>
+            <h3>{{store.roles.creativeLeader.roleName}}<span>.</span></h3>
             <hr>
             <p>{{store.roles.creativeLeader.roleText}}</p>
             <a class="read-more" href="" @click.prevent>READ MORE</a>
