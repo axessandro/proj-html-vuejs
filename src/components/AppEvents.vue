@@ -29,36 +29,37 @@ export default{
                     locationEvent: "Cambridge, MA 02138, USA"
                 }
             ],
-            currentPhoto: 0,
-            nPhotos: 3,
+            currentImg: 0,
+            
         }
     },
     methods:{
-        showNext(){
-            if(this.currentPhoto < this.nPhotos -1){
-                this.currentPhoto++;
-            }else{
-                this.currentPhoto = 0;
-            }
-        },
         getImg(url){
             return new URL(url, import.meta.url).href;
         },
+        showClicked(index){
+        this.currentImg = index;
+        },
+        clickedClass(index){
+            if(index === this.currentImg){
+                return "clicked";
+            } else {
+                return "";
+            }
+        }
     },
-    created(){
-        setInterval(this.showNext, 8000)
-    }
+    
 }
 </script>
 
 <template>
 <section>
-    <img :src="getImg(`../assets/img/event-${currentPhoto}.jpg`)" alt="Event photo">
+    <img :src="getImg(`../assets/img/event-${currentImg}.jpg`)" alt="Event photo">
     <div class="events-card">
         <h4>Upcoming Events</h4>
         
         <!-- EVENT -->
-        <div class="event" v-for="(event, index) in events" :key="index">
+        <div class="event" @click="showClicked(index)" :class="clickedClass(index)" v-for="(event, index) in events" :key="index">
             <!-- orange label -->
             <div class="label">
                 <div class="event-num-day"><span v-if="event.dayEvent < 10">0</span>{{event.dayEvent}}</div>
@@ -98,6 +99,13 @@ section{
     width: 100%;
     margin: 0 auto;
     position: relative;
+    max-height: 900px;
+    overflow: hidden;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
     .events-card{
         position: absolute;
         max-width: 40%;
@@ -112,7 +120,8 @@ section{
             margin-bottom: 0;
             padding-top: 15px;
             padding-bottom: 15px;
-            box-shadow: 0 4px 2px -2px lightgray;
+            box-shadow: 0 8px 4px -4px rgb(221, 221, 221);
+            z-index: 999;
             font-weight: 600;
             font-size: 1.2rem;
         }
@@ -121,8 +130,8 @@ section{
             padding: $p-left;
             border-bottom: 1px solid lightgray;
             background-color: #FAFAFA;
-            &.active{
-                background-color: white;
+            &.clicked{
+                background-color: rgb(255, 255, 255);
             }
             .label{
                 color: white;
