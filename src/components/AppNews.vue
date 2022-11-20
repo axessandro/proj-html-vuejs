@@ -151,8 +151,8 @@ export default{
 section{
     position: relative;
     background-color: $gray-bg;
-    padding-top: 120px;
-
+    padding-top: 100px;
+    padding-bottom: 60px;
     &>img{
         position: absolute;
         width: 400px;
@@ -175,7 +175,7 @@ section{
             padding: 1rem;
             height: 400px;
             display: flex;
-            
+            position: absolute;
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -184,7 +184,13 @@ section{
                 box-shadow: inset 2px 0px 21px 0 rgb(225, 225, 225);
             }
         }
+        .prev-btn{
+            left: 5%;
+        }
 
+        .next-btn{
+            right: 5%;
+        }
         .ms-container{
             width: 80%;
             margin: 0 auto;

@@ -6,6 +6,7 @@ import AppMembers from './components/AppMembers.vue';
 import AppEvents from './components/AppEvents.vue';
 import AppRole from './components/AppRole.vue';
 import AppNews from './components/AppNews.vue';
+import AppTestimonials from './components/AppTestimonials.vue';
 
 export default{
     components:{
@@ -15,7 +16,8 @@ export default{
         AppMembers,
         AppEvents,
         AppRole,
-        AppNews
+        AppNews,
+        AppTestimonials
     }
 }
 </script>
@@ -28,6 +30,7 @@ export default{
   <AppEvents/>
   <AppRole/>
   <AppNews/>
+  <AppTestimonials/>
 </template>
 
 <style lang="scss">
