@@ -80,6 +80,10 @@ export default{
         <!-- /next-btn -->
     </div>
 </section>
+<div class="video-wrapper">
+    <img src="../assets/img/video-thumb.jpg" alt="">
+    <i class="fa-solid fa-play"></i>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -155,6 +159,22 @@ section{
             &:hover{
                 box-shadow: inset 2px 0px 21px 0 rgb(50, 50, 50);
             }
+        }
+    }
+}
+.video-wrapper{
+    position: relative;
+    i{
+        position: absolute;
+        font-size: 4rem;
+        opacity: .7;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &:hover{
+            cursor: pointer;
+            color: $primary-color;
         }
     }
 }
