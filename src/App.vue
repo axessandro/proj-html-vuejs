@@ -7,6 +7,7 @@ import AppEvents from './components/AppEvents.vue';
 import AppRole from './components/AppRole.vue';
 import AppNews from './components/AppNews.vue';
 import AppTestimonials from './components/AppTestimonials.vue';
+import AppContact from './components/AppContact.vue';
 
 export default{
     components:{
@@ -17,7 +18,8 @@ export default{
         AppEvents,
         AppRole,
         AppNews,
-        AppTestimonials
+        AppTestimonials,
+        AppContact
     }
 }
 </script>
@@ -31,6 +33,7 @@ export default{
   <AppRole/>
   <AppNews/>
   <AppTestimonials/>
+  <AppContact/>
 </template>
 
 <style lang="scss">
