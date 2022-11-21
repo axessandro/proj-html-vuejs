@@ -1,34 +1,37 @@
 <script>
+import {store} from "../store"
+
 export default{
     name: "AppEvents",
     data(){
         return{
-            events:[
-                {
-                    nameEvent: "Melburne Coaching",
-                    hourEvent: "9:00 am - 5:00 pm",
-                    dayEvent: 7,
-                    mounthEvent: "Jan",
-                    yearEvent: 2022,
-                    locationEvent: "Cambridge, MA 02138, USA"
-                },
-                {
-                    nameEvent: "New York Coaching",
-                    hourEvent: "9:00 am - 5:00 pm",
-                    dayEvent: 11,
-                    mounthEvent: "Jan",
-                    yearEvent: 2022,
-                    locationEvent: "Cambridge, MA 02138, USA"
-                },
-                {
-                    nameEvent: "London Coaching",
-                    hourEvent: "9:00 am - 5:00 pm",
-                    dayEvent: 21,
-                    mounthEvent: "Jan",
-                    yearEvent: 2022,
-                    locationEvent: "Cambridge, MA 02138, USA"
-                }
-            ],
+            store,
+            // events:[
+            //     {
+            //         nameEvent: "Melburne Coaching",
+            //         hourEvent: "9:00 am - 5:00 pm",
+            //         dayEvent: 7,
+            //         mounthEvent: "Jan",
+            //         yearEvent: 2022,
+            //         locationEvent: "Cambridge, MA 02138, USA"
+            //     },
+            //     {
+            //         nameEvent: "New York Coaching",
+            //         hourEvent: "9:00 am - 5:00 pm",
+            //         dayEvent: 11,
+            //         mounthEvent: "Jan",
+            //         yearEvent: 2022,
+            //         locationEvent: "Cambridge, MA 02138, USA"
+            //     },
+            //     {
+            //         nameEvent: "London Coaching",
+            //         hourEvent: "9:00 am - 5:00 pm",
+            //         dayEvent: 21,
+            //         mounthEvent: "Jan",
+            //         yearEvent: 2022,
+            //         locationEvent: "Cambridge, MA 02138, USA"
+            //     }
+            // ],
             currentImg: 0,
             
         }
@@ -59,7 +62,7 @@ export default{
         <h4>Upcoming Events</h4>
         
         <!-- EVENT -->
-        <div class="event" @click="showClicked(index)" :class="clickedClass(index)" v-for="(event, index) in events" :key="index">
+        <div class="event" @click="showClicked(index)" :class="clickedClass(index)" v-for="(event, index) in store.events" :key="index">
             <!-- orange label -->
             <div class="label">
                 <div class="event-num-day"><span v-if="event.dayEvent < 10">0</span>{{event.dayEvent}}</div>

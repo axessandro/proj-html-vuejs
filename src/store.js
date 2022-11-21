@@ -71,5 +71,37 @@ export const store = reactive({
                 }
             ]
         }
-    }
+    },
+    events:[
+        {
+            nameEvent: "Melburne Coaching",
+            hourEvent: "9:00 am - 5:00 pm",
+            dayEvent: 7,
+            mounthEvent: "Jan",
+            yearEvent: 2022,
+            locationEvent: "Cambridge, MA 02138, USA",
+            class: "-melburne",
+            mapVisible: false
+        },
+        {
+            nameEvent: "New York Coaching",
+            hourEvent: "9:00 am - 5:00 pm",
+            dayEvent: 11,
+            mounthEvent: "Jan",
+            yearEvent: 2022,
+            locationEvent: "Cambridge, MA 02138, USA",
+            class: "-new-york",
+            mapVisible: true
+        },
+        {
+            nameEvent: "London Coaching",
+            hourEvent: "9:00 am - 5:00 pm",
+            dayEvent: 21,
+            mounthEvent: "Jan",
+            yearEvent: 2022,
+            locationEvent: "Cambridge, MA 02138, USA",
+            class: "-london",
+            mapVisible: false
+        }
+    ]
 })

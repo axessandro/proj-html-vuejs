@@ -135,7 +135,6 @@ export default{
                         padding-top: .3rem;
                         padding-bottom: .3rem;
                         font-size: .8rem;
-
                         border-right: 1px solid $dark-color;
                     }
                 }
