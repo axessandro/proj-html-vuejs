@@ -88,6 +88,7 @@ export default{
 </script>
 
 <template>
+<!-- CONTACT US SECTION -->
 <section>
     <!-- contact us with map -->
     <div class="ms-container">
@@ -137,13 +138,13 @@ export default{
         </div>
     </div>
     <!-- /clients -->
-
-
 </section>
+<!-- CONTACT US SECTION -->
 </template>
 
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
+
 section{
     background-color: $gray-bg;
     padding: 100px 0;
@@ -254,7 +255,6 @@ section{
         
     }
     // /contact us
-
     // clients
     .clients-wrapper{
         width: 75%;

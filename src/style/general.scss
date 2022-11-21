@@ -6,6 +6,8 @@
 $dark-color: #1E1E1E;
 $primary-color: #FF4612;
 $gray-bg: #fafafa;
+$footer-bg: #171515;
+$footer-color: rgb(155, 155, 155);
 // VARIABLES
 
 // common
@@ -19,7 +21,22 @@ hr{
     width: 50px;
     opacity: 1;
     border: 1px solid $primary-color;
-    
+}
+.socials{
+    i{
+        background-color: $primary-color;
+        color: white;
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        text-align: center;
+        margin-right: .5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+            background-color: $dark-color;
+        }
+    }
 }
 // common
 

@@ -36,13 +36,16 @@ export default{
 </script>
 
 <template>
+<!-- SPECIALTIES SECTION -->
 <section>
     <div class="specialties">
 
         <h2>Our specialties<span>.</span></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <hr>
+        
         <div class="row">
+            <!-- card -->
             <div class="ms_card col-md-2" v-for="(specialty, index) in specialties" :key="index">
                 <div class="img-wrapper">
                     <img :src="getImg(`../assets/svg/${specialty.imgURL}`)" :alt="specialty.title">
@@ -50,10 +53,12 @@ export default{
                 <h4>{{specialty.title}}</h4>
                 <p>{{specialty.subtitle}}</p>
             </div>
+            <!-- card -->
         </div>
         
     </div>
 </section>    
+<!-- /SPECIALTIES SECTION -->
 </template>
 
 <style lang="scss" scoped>

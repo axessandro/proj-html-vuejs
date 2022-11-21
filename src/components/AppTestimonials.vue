@@ -49,6 +49,7 @@ export default{
 </script>
 
 <template>
+<!-- TESTIMONIALS SECTION -->
 <section>
     <div class="bg-text">Testimonials.</div>
     <div class="inner-section">
@@ -80,10 +81,14 @@ export default{
         <!-- /next-btn -->
     </div>
 </section>
+<!-- /TESTIMONIALS SECTION -->
+
+<!-- VIDEO SECTION -->
 <div class="video-wrapper">
     <img src="../assets/img/video-thumb.jpg" alt="">
     <i class="fa-solid fa-play"></i>
 </div>
+<!-- /VIDEO SECTION -->
 </template>
 
 <style lang="scss" scoped>

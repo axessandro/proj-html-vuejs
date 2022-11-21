@@ -68,19 +68,24 @@ export default{
 
 <template>
 <section>
-
+    <!-- background pattern -->
     <img src="../assets/svg/svg-4.svg" alt="Decoration">
+    <!-- background pattern -->
 
+    <!-- titling -->
     <div class="titling">
         <h2>Latest news<span>.</span></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <hr>
     </div>
-    <div class="container-fluid">
-        
+    <!-- titling -->
+
+
+    <div class="container-fluid">    
         <!-- prev-btn -->
         <div class="prev-btn" @click="showPrev">&larr;</div>
         <!-- /prev-btn -->
+
         <!-- cards -->
         <div class="ms-container row row-cols-md-3">
             <div class="col" :class="newsHiddenIndex === index ? 'hide' : ''" v-for="(news, index) in newsArray" :key="index">
@@ -187,7 +192,6 @@ section{
         .prev-btn{
             left: 5%;
         }
-
         .next-btn{
             right: 5%;
         }

@@ -56,8 +56,13 @@ export default{
 </script>
 
 <template>
+<!-- EVENTS SECTION -->
 <section>
+    <!-- events img -->
     <img :src="getImg(`../assets/img/event-${currentImg}.jpg`)" alt="Event photo">
+    <!-- /events img -->
+
+    <!-- events wrapper -->
     <div class="events-card">
         <h4>Upcoming Events</h4>
         
@@ -91,13 +96,16 @@ export default{
         <!-- /EVENT -->
 
     </div>
+    <!-- events wrapper -->
+
 </section>
+<!-- /EVENTS SECTION -->
 </template>
 
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
-$p-left: 30px;
 
+$p-left: 30px;
 section{
     width: 100%;
     margin: 0 auto;
@@ -187,7 +195,5 @@ section{
             
         }
     }
-
 }
-
 </style>

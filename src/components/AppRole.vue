@@ -6,13 +6,13 @@ export default{
     data(){
         return{
             store,
-
         }
     },
 }
 </script>
 
 <template>
+<!-- ROLE SECTION -->
 <section>
     <div class="ms-container">
         <!-- left-side -->
@@ -37,6 +37,7 @@ export default{
         <!-- /right-side -->
     </div>
 </section>
+<!-- /ROLE SECTION -->
 </template>
 
 <style lang="scss" scoped>

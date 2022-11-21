@@ -52,15 +52,20 @@ export default{
 </script>
 
 <template>
+<!-- MEMBERS SECTION -->
 <section>
     <div class="ms_container">
+
         <div class="member-img">
+            <!-- member img -->
             <img :src="getImg(`../assets/img/${members[currentMember].photo}`)" alt="">
             <div class="btns">
                 <div class="prev-btn" @click="showPrev">&larr;</div>
                 <div class="next-btn" @click="showNext">&rarr;</div>
             </div>
+            <!-- member img -->
 
+            <!-- member info -->
             <div class="member-card">
                 <h3>{{members[currentMember].name}}</h3>
                 <p class="role">{{members[currentMember].role}}</p>
@@ -72,19 +77,20 @@ export default{
                         <i class="fa-brands fa-facebook-f"></i>
                         <i class="fa-brands fa-twitter"></i>
                     </div>
-    
                     <img :src="getImg(`../assets/img/${members[currentMember].signature}`)" :alt="members[currentMember].name">
                 </div>
             </div>
+            <!-- member info -->
         </div>
 
+        <!-- background pattern -->
         <div class="section-right">
-
-            
             <img src="../assets/svg/svg-4.svg" alt="">
         </div>
+        <!-- background pattern -->
     </div>
 </section>
+<!-- MEMBERS SECTION -->
 </template>
 
 <style lang="scss" scoped>
@@ -150,13 +156,6 @@ section{
                         i{
                             background-color: $primary-color;
                             color: white;
-                            height: 30px;
-                            width: 30px;
-                            line-height: 30px;
-                            text-align: center;
-                            margin-right: .5rem;
-                            border-radius: 50%;
-                            cursor: pointer;
                             &:hover{
                                 background-color: $dark-color;
                             }

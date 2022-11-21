@@ -3,34 +3,11 @@ export default {
     name: "AppHeader",
     data(){
         return{
-            links: [
-                {
-                    section: "homes",
-                    href: "/homes"
-                },
-                {
-                    section: "pages",
-                    href: "/pages"
-                },
-                {
-                    section: "blog",
-                    href: "/blog"
-                },
-                {
-                    section: "shop",
-                    href: "/shop"
-                },
-                {
-                    section: "events",
-                    href: "/events"
-                },
-                {
-                    section: "elements",
-                    href: "/elements"
-                },
-            ],
             currentClicked: 0,
         }
+    },
+    props:{
+        links: Array,
     },
     methods:{
         showClicked(index){
@@ -44,11 +21,11 @@ export default {
     <!-- HEADER -->
     <header>
         <div class="header-inner">
-            <!-- HEADER LEFT -->
+            <!-- header -->
             <div class="header-logo"><img src="../assets/img/logo-img-01.png" alt=""></div>
-            <!-- HEADER LEFT -->
+            <!-- header -->
         
-            <!-- HEADER RIGHT -->
+            <!-- header right -->
             <div class="header-right">
                 <div class="links">
                     <a :href="link.href" @click.prevent="showClicked(index)" :class="currentClicked === index ? 'clicked' : ''"  v-for="(link, index) in links" :key="index"> <span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a>
@@ -59,7 +36,7 @@ export default {
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
-            <!-- /HEADER RIGHT -->
+            <!-- /header right -->
         </div>
 
     </header>
@@ -68,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
+
 $margin-links: .5rem;
 header{
     width: 100%;
@@ -105,7 +83,6 @@ header{
                         color: rgba(0, 0, 0, 0);   
                     }
                 }
-
                 .clicked{
                     color: $primary-color;
                     .arrow{
@@ -126,5 +103,4 @@ header{
         }    
     }
 }
-
 </style>

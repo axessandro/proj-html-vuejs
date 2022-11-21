@@ -57,19 +57,34 @@ export default{
 </script>
 
 <template>
+<!-- JUMBO -->
 <section class="jumbo">
+    <!-- jumbo img -->
     <img :src="getImg(`../assets/img/${this.pages[currentPage].imgURL}`)" :alt="pages[currentPage].title">
+    <!-- /jumbo img -->
+
+    <!-- jumbo inner -->
     <div class="jumbo-inner">
+        <!-- prev-btn -->
         <div class="prev-btn" @mouseover="stopAutoplay" @mouseleave="startAutoplay" @click="showPrev">&larr;</div>
+        <!-- /prev-btn -->
+
+        <!-- text -->
         <div class="text-wrapper">
             <h1>{{pages[currentPage].title}}<span>.</span></h1>
             <p>{{pages[currentPage].subtitle}}</p>
             <button><a :href="pages[currentPage].href"><span>READ MORE</span> &rarr;</a></button>
             <button class="orange-btn"><a :href="pages[currentPage].href"><span>PURCHASE</span> &rarr;</a></button>
         </div>
+        <!-- text -->
+
+        <!-- next btn -->
         <div class="next-btn" @mouseover="stopAutoplay" @mouseleave="startAutoplay" @click="showNext">&rarr;</div>
+        <!-- /next btn -->
     </div>
+    <!-- jumbo inner -->
 </section>
+<!-- JUMBO -->
 </template>
 
 <style lang="scss" scoped>
