@@ -112,7 +112,8 @@ section{
     .events-card{
         position: absolute;
         max-width: 40%;
-        top: 150px;
+        top: 50%;
+        transform: translateY(-50%);
         left: 12.5%;
         z-index: 999;
         background-color: white;

@@ -103,5 +103,27 @@ export const store = reactive({
             class: "-london",
             mapVisible: false
         }
+    ],
+    clients:[
+        {
+            urlLogo: "client-1a",
+            urlLogoActive: "client-1b"
+        },
+        {
+            urlLogo: "client-2a",
+            urlLogoActive: "client-2b"
+        },
+        {
+            urlLogo: "client-3a",
+            urlLogoActive: "client-3b"
+        },
+        {
+            urlLogo: "client-4a",
+            urlLogoActive: "client-4b"
+        },
+        {
+            urlLogo: "client-5a",
+            urlLogoActive: "client-5b"
+        }
     ]
 })

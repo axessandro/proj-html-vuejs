@@ -37,6 +37,28 @@ export default{
             //         class: "-london",
             //         mapVisible: false
             //     }
+            // ],
+            // clients:[
+            //     {
+            //         urlLogo: "client-1a",
+            //         urlLogoActive: "client-1b"
+            //     },
+            //     {
+            //         urlLogo: "client-2a",
+            //         urlLogoActive: "client-2b"
+            //     },
+            //     {
+            //         urlLogo: "client-3a",
+            //         urlLogoActive: "client-3b"
+            //     },
+            //     {
+            //         urlLogo: "client-4a",
+            //         urlLogoActive: "client-4b"
+            //     },
+            //     {
+            //         urlLogo: "client-5a",
+            //         urlLogoActive: "client-5b"
+            //     }
             // ]
             currentActive: 2,
         }
@@ -47,7 +69,6 @@ export default{
                 this.store.events[clickedIndex].mapVisible = false
                 this.currentActive = null
             } else{
-
                 this.hideLabel();
                 this.currentActive = clickedIndex;
                 this.store.events[clickedIndex].mapVisible = true            
@@ -58,18 +79,21 @@ export default{
                 const event = this.store.events[i];
                 event.mapVisible = false;
             }
-        }
+        },
+        getImg(url){
+            return new URL(url, import.meta.url).href;
+        },
     }
 }
 </script>
 
 <template>
 <section>
+    <!-- contact us with map -->
     <div class="ms-container">
         <!-- map -->
         <div class="map">
             <img src="../assets/img/map.png" @click="hideLabel" alt="">
-
             <!-- btn -->
             <div v-for="(event, index) in store.events" :key="index" class="dot" :class="`dot${event.class}`">
                 
@@ -81,7 +105,6 @@ export default{
     
             </div>
             <!-- /btn -->
-
         </div>
         <!-- /map -->
 
@@ -104,6 +127,18 @@ export default{
         </div>
         <!-- /form -->
     </div>
+    <!-- /contact us with map -->
+
+    <!-- clients -->
+    <div class="clients-wrapper">
+        <div v-for="(client, index) in store.clients" :key="index" class="client-logo">
+            <img class="logo-dark" :src="getImg(`../assets/img/${client.urlLogo}.png`)" alt="Client Logo">
+            <img class="logo-active" :src="getImg(`../assets/img/${client.urlLogoActive}.png`)" alt="Client Logo">
+        </div>
+    </div>
+    <!-- /clients -->
+
+
 </section>
 </template>
 
@@ -112,6 +147,7 @@ export default{
 section{
     background-color: $gray-bg;
     padding: 100px 0;
+    // contact us
     .ms-container{
         display: flex;
         gap: 3rem;
@@ -123,6 +159,9 @@ section{
             position: relative;
             .dot{
                 position: absolute;
+                img{
+                    cursor: pointer;
+                }
                 .label{
                     z-index: 999;
                     background-color: white;
@@ -132,7 +171,6 @@ section{
                         margin-bottom: 0;
                         font-weight: 600;
                     }
-                    
                 }
                 .visible{
                     display: block;
@@ -141,7 +179,6 @@ section{
             .dot-new-york{
                 left: 23%;
                 top: 35%;
-                
             }
             .dot-london{
                 left: 43%;
@@ -154,7 +191,6 @@ section{
                 right: 10%;
                 bottom: 10%;
             }
-            
         }
         .contact-us{
             width: 50%;
@@ -215,6 +251,32 @@ section{
                 }
             }
         }
+        
     }
+    // /contact us
+
+    // clients
+    .clients-wrapper{
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 80px;
+        .client-logo{
+            position: relative;
+            scale: .8;
+            cursor: pointer;
+            .logo-dark{
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                &:hover{
+                    display: none;
+                }
+            }
+        }
+    }
+    // /clients
 }
 </style>
