@@ -123,7 +123,7 @@ section{
         top: 50%;
         transform: translateY(-50%);
         left: 12.5%;
-        z-index: 999;
+        z-index: 700;
         background-color: white;
         display: flex;
         flex-direction: column;

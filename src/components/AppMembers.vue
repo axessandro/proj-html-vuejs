@@ -140,7 +140,7 @@ section{
                 position: absolute;
                 bottom: 40px;
                 left: 85%;
-                z-index: 999;
+                z-index: 700;
                 .role{
                     font-size: .6rem;
                 }

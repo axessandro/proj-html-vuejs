@@ -8,7 +8,6 @@ export default {
             store,
             linkClicked: 0,
             searchClicked: false,
-            hamburgerClicked: false
         }
     },
     props:{
@@ -20,12 +19,12 @@ export default {
             this.linkClicked = index;
         },
         toggleSearch(){
-            this.hamburgerClicked = false;
+            this.store.hamburgerClicked = false;
             this.searchClicked = !this.searchClicked;
         },
         toggleHamburger(){
             this.searchClicked = false;
-            this.hamburgerClicked = !this.hamburgerClicked;
+            this.store.hamburgerClicked = !this.store.hamburgerClicked;
         }
     }
 }
@@ -51,15 +50,15 @@ export default {
                     <i @click="toggleSearch" :class="searchClicked ? 'search-clicked' : ''" class="fa-solid fa-magnifying-glass search-btn"></i>
                 </div>
                 <div class="hamburger-menu">
-                    <div @click="toggleHamburger" class="hamburger" :class="hamburgerClicked ? 'hamburger-clicked' : ''">
+                    <div @click="toggleHamburger" class="hamburger" :class="store.hamburgerClicked ? 'hamburger-clicked' : ''">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                         <i class="fa-solid fa-bars"></i>
                     </div>
                     <!-- hide menu -->
-                    <div class="hide-menu" :class="hamburgerClicked ? 'd-block' : 'd-none'">
+                    <div class="hide-menu" :class="store.hamburgerClicked ? 'd-block' : 'd-none'">
                         <button class="btn-close-menu" @click="toggleHamburger"><span>X</span></button>
                         <ul>
-                            <li v-for="(link, index) in links" :key="index"><a :href="link.href" @click.prevent="toggleHamburger"><span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a></li>
+                            <li @click.prevent="showClicked(index)" v-for="(link, index) in links" :key="index"><a :href="link.href" @click.prevent="toggleHamburger"><span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a></li>
                             <li v-for="(link, index) in footerLinks" :key="index"><a :href="link.href" @click.prevent="toggleHamburger"><span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a></li>
                         </ul>
                         <div class="socials">
@@ -168,16 +167,19 @@ header{
                 }
                 .hide-menu{
                     position: fixed;
-                    padding: 0 30px;
+                    padding-right: 30px;
                     padding-top: 10px;
                     display: flex;
                     flex-direction: column;
                     top: 0;
                     right: 0;
-                    width: 200px;
+                    box-shadow: 0 0 600px 1px rgb(0, 0, 0);
                     height: 100vh;
-                    background-color: $gray-bg;
+                    background: linear-gradient(90deg,#ffffff7a, #d4d4d400);
+                    z-index: 999;
+                    backdrop-filter: blur(10px);
                     .btn-close-menu{
+                        margin-left: 80px;
                         width: 50px;
                         height: 50px;
                         border: 0;
@@ -198,7 +200,7 @@ header{
                                 font-family: 'PT Sans', sans-serif;
                                 font-weight: 200;
                                 .arrow{
-                                    color: $gray-bg;
+                                    color: rgba(255, 255, 255, 0);
                                 }
                                 &:hover{
                                     color: $primary-color;

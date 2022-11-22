@@ -253,7 +253,7 @@ section{
                             position: absolute;
                             top: -22px;
                             right: 10px;
-                            z-index: 999;
+                            z-index: 700;
                             font-family: 'PT Sans', sans-serif;
                             font-weight: 200;
                             color: white;
