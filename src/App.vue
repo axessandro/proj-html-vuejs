@@ -80,7 +80,7 @@ export default{
 </script>
 
 <template>
-  <AppHeader :links="headerLinks"/>
+  <AppHeader :links="headerLinks" :footerLinks="footerLinks"/>
   <AppJumbo/>
   <AppSpecialties/>
   <AppMembers/>

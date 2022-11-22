@@ -22,6 +22,10 @@ hr{
     opacity: 1;
     border: 1px solid $primary-color;
 }
+ul{
+    list-style-type: none;
+    padding-left: 0;
+}
 .socials{
     i{
         background-color: $primary-color;

@@ -1,17 +1,31 @@
 <script>
+import {store} from "../store"
+
 export default {
     name: "AppHeader",
     data(){
         return{
-            currentClicked: 0,
+            store,
+            linkClicked: 0,
+            searchClicked: false,
+            hamburgerClicked: false
         }
     },
     props:{
         links: Array,
+        footerLinks: Array,
     },
     methods:{
         showClicked(index){
-            this.currentClicked = index;
+            this.linkClicked = index;
+        },
+        toggleSearch(){
+            this.hamburgerClicked = false;
+            this.searchClicked = !this.searchClicked;
+        },
+        toggleHamburger(){
+            this.searchClicked = false;
+            this.hamburgerClicked = !this.hamburgerClicked;
         }
     }
 }
@@ -28,12 +42,33 @@ export default {
             <!-- header right -->
             <div class="header-right">
                 <div class="links">
-                    <a :href="link.href" @click.prevent="showClicked(index)" :class="currentClicked === index ? 'clicked' : ''"  v-for="(link, index) in links" :key="index"> <span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a>
+                    <a :href="link.href" @click.prevent="showClicked(index)" :class="linkClicked === index ? 'clicked' : ''"  v-for="(link, index) in links" :key="index"> <span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a>
                 </div>
-                <i class="fa-solid fa-magnifying-glass search-btn"></i>
-                <div class="hamburgher">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                    <i class="fa-solid fa-bars"></i>
+                <div class="search">
+                    <!-- hidden input -->
+                    <input :class="searchClicked ? 'd-block'  : 'd-none'" type="text" v-model="store.searchValue">
+                    <!-- hidden input -->
+                    <i @click="toggleSearch" :class="searchClicked ? 'search-clicked' : ''" class="fa-solid fa-magnifying-glass search-btn"></i>
+                </div>
+                <div class="hamburger-menu">
+                    <div @click="toggleHamburger" class="hamburger" :class="hamburgerClicked ? 'hamburger-clicked' : ''">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <!-- hide menu -->
+                    <div class="hide-menu" :class="hamburgerClicked ? 'd-block' : 'd-none'">
+                        <button class="btn-close-menu" @click="toggleHamburger"><span>X</span></button>
+                        <ul>
+                            <li v-for="(link, index) in links" :key="index"><a :href="link.href" @click.prevent="toggleHamburger"><span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a></li>
+                            <li v-for="(link, index) in footerLinks" :key="index"><a :href="link.href" @click.prevent="toggleHamburger"><span class="arrow">&rarr;</span>{{link.section.toUpperCase()}}</a></li>
+                        </ul>
+                        <div class="socials">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                    </div>
+                    <!-- /hide menu -->
                 </div>
             </div>
             <!-- /header right -->
@@ -45,6 +80,10 @@ export default {
 
 <style lang="scss" scoped>
 @use "../style/general.scss" as *;
+
+.hamburger-clicked{
+    color: $primary-color;
+}
 
 $margin-links: .5rem;
 header{
@@ -90,14 +129,93 @@ header{
                     }
                 }
             }
-            .search-btn{
-                transform: rotateY(180deg);
+            .search{
+                display: flex;
+                input{
+                    color: $dark-color;
+                    border: 1px solid $primary-color;
+                    border-right: 0;
+                    border-radius: 20px 0 0 20px;
+                    padding-left: 20px;
+                    background-color: $gray-bg;
+                }
+                .search-btn{
+                    transform: rotateY(180deg);
+                    &:hover{
+                        color: $primary-color;
+                        cursor: pointer;
+                    }
+                }
+                .search-clicked{
+                    color: $primary-color;
+                    border: 1px solid $primary-color;
+                    border-right: 0;
+                    padding: 5px;
+                    border-radius: 50% 0 0 50% ;
+                }
             }
-            .hamburgher{
-                margin-left: 1rem;
-
-                i{
-                    margin-left: .1rem;
+            .hamburger-menu{
+                .hamburger{
+                    margin-left: 1rem;
+                    &:hover{
+                        color: $primary-color;
+                    }
+    
+                    i{
+                        margin-left: .1rem;
+                        cursor: pointer;
+                    }
+                }
+                .hide-menu{
+                    position: fixed;
+                    padding: 0 30px;
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    top: 0;
+                    right: 0;
+                    width: 200px;
+                    height: 100vh;
+                    background-color: $gray-bg;
+                    .btn-close-menu{
+                        width: 50px;
+                        height: 50px;
+                        border: 0;
+                        border-radius: 50%;
+                        line-height: 50px;
+                        text-align: center;
+                        background-color: $primary-color;
+                        color: white;
+                        font-size: 20px;
+                    }
+                    ul{
+                        padding: 200px 0;
+                        li{
+                            padding-bottom: .3rem;
+                            a{
+                                color: $dark-color;
+                                text-decoration: none;
+                                font-family: 'PT Sans', sans-serif;
+                                font-weight: 200;
+                                .arrow{
+                                    color: $gray-bg;
+                                }
+                                &:hover{
+                                    color: $primary-color;
+                                    .arrow{
+                                        color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .socials{
+                        text-align: center;
+                        padding: 20px;
+                        i{
+                            background-color: $dark-color;
+                        }
+                    }
                 }
             }
         }    

@@ -122,8 +122,6 @@ footer{
                 color: $footer-color;
             }
             ul{
-                list-style-type: none;
-                padding-left: 0;
                 li{
                     padding-bottom: .3rem;
                     a{
